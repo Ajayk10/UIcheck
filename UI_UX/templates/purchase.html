@@ -1,0 +1,34 @@
+{% extends 'base.html' %} {% load static %} 
+
+{% block content %} <br /><br />
+<div class="container">
+
+      <div class="card border-dark mb-3">
+        <h3 class="card-header">NOTE</h3>
+        <div class="card-body text-dark">
+          <h5 class="card-title" style="font-family:Verdana, Geneva, Tahoma, sans-serif;
+          color: blueviolet;">Support Us</h5>
+          <p class="text-donate">We provide the services and merchandise absolutely free
+            but if you think our services helped to achieve positive impact in your life 
+            then we request you to support us through donation. 
+            Its your support which keeps us going and growing..</p>
+            <a href="#" class="btn btn-success" style="font-family: cursive;">
+              Yes ! I will Donate</a>
+        </div>
+      </div> 
+      <hr/>
+    <div class="card-deck">
+        <div class="card">
+          <img src="{% static 'images/yoga.png' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><button class="btn btn-dark">Download</button></p>
+          </div>
+        </div>
+       
+      </div>
+
+</div>
+<br><br>
+{% endblock %}

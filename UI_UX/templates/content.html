@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% load static %} 
+
+{% block content %} <br /><br />
+<script type="text/javascript">
+
+
+</script>
+
+
+<div class="container">
+    <div class="card mb-3">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="https://picsum.photos/id/4/400/500" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <form class="form-inline">
+          <div class="form-group mx-sm-3 mb-2">
+            <input type="text" class="form-control" id="username" placeholder="Username">
+            <input type="text" class="form-control" id="comment">
+          </div>
+          <button type="submit" class="genbutton" ><i class="fas fa-plus-circle fa-2x"></i></button><br>
+        </form>
+        <hr>
+        <br><h6 id='commentprofile'><i class="fas fa-user-circle"></i>Commentor Profile</h6>
+        <h5 id='showcomment'>Comment</h5>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<br><br><br>
+{% endblock %}

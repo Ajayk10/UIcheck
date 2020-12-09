@@ -1,0 +1,54 @@
+{% extends 'base.html' %} {% load static %} 
+
+{% block content %} <br /><br />
+<style>
+    .table{
+    text-align: center;
+}
+</style>
+
+<div class="container">
+    <div class="card-deck">
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img style="border-radius: 100%;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Dwayne_Johnson_at_the_2009_Tribeca_Film_Festival.jpg/220px-Dwayne_Johnson_at_the_2009_Tribeca_Film_Festival.jpg" class="card-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title" style="font-family:cursive;">Mohanlal Dileep</h5>
+                  <h6 class="card-title"><i class="fas fa-at" style="padding-right: 10px;"></i>Username</h6>
+                  <h6 class="card-title"><i class="far fa-envelope" style="padding-right: 10px;"></i>user@gmail</h6>
+                  <h6 class="card-title"><i class="fas fa-phone-alt" style="padding-right: 10px;"></i>9003177146</h6>
+                  <p class="card-text"><i class="far fa-calendar-plus" style="padding-right: 10px;"></i>Joined on:</p>
+                  <p class="card-text"><i class="fas fa-info" style="padding-right: 10px;"></i>Bio</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card mb-3" style="max-width: 540px;">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <img src="{% static '/images/graph.png' %}" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <table class="table">
+                        <tr>
+                            <th class="table-primary">Likes</th>
+                            <th class="table-primary">Comments</th>
+                        </tr>
+                    </table>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>
+<hr/>
+<h4 style="text-align: center; font-family: 'Roboto', sans-serif;"><i class="fas fa-bookmark" style="padding-right: 10px;"></i>Saved</h4>    
+
+</div>
+<br><br>
+{% endblock %}

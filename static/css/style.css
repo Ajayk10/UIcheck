@@ -1,0 +1,42 @@
+.like,
+.like:focus {
+    border-color: transparent;
+    background-color:transparent;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-radius: 100%;
+}
+.genbutton{
+    border-color: transparent;
+    background-color:transparent;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    margin-left: 15px;
+    border-radius: 100px;
+}
+
+
+.fa-comment-alt{
+    color: black;
+    text-decoration: none;
+    outline: none;
+}
+
+.fa-plus-circle{
+    color: blueviolet;
+    text-decoration: none;
+    outline: none;
+}
+
+.logo{
+    height: 50px;
+    width: 50px;
+    padding-bottom: -10px;
+}
+
+.text-donate{
+    font-family:cursive ;
+}
+

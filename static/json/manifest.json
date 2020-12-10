@@ -26,5 +26,5 @@
         "sizes": "380x380"
       }
     ],
-    "start_url": "https://awake-ui.herokuapp.com/"
+    "start_url": "http://localhost:8000/base.html"
   }

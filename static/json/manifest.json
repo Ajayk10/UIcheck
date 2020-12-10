@@ -8,23 +8,23 @@
       {
         "src": "yoga.png",
         "type": "image/png",
-        "sizes": "48x48"
+        "sizes": "380x380"
       },
       {
         "src": "yoga.png",
         "type": "image/png",
-        "sizes": "96x96"
+        "sizes": "380x380"
       },
       {
         "src": "yoga.png",
         "type": "image/png",
-        "sizes": "144x144"
+        "sizes": "380x380"
       },
       {
         "src": "yoga.png",
         "type": "image/png",
-        "sizes": "192x192"
+        "sizes": "380x380"
       }
     ],
-    "start_url": "UI_UX/templates/base.html"
+    "start_url": "https://awake-ui.herokuapp.com/"
   }

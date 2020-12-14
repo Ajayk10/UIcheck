@@ -24,18 +24,17 @@
 
 </script>
 <div class="container">
-    
-	<div class="card-deck">
+    {% for feeds in feeds %}
         <div class="card mb-3">
             <div class="row no-gutters">
               <div class="col-md-4">
-                <img src="https://picsum.photos/id/9/500/600" class="card-img" alt="...">
+                <img src="{{feeds.link}}" id="imgContent" class="card-img" alt="..."/>
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <button class="like" onclick="react()">
+                  <h5 class="card-title">{{feeds.title}}</h5>
+                  <p class="card-text">{{feeds.desc}}.</p>
+                  <button class="like" >
                     <i class="far fa-heart fa-2x" id="like"></i> <p id='count'></p>
                 </button>
                 <a style="float: right;" class="comment" href="{% url 'content' %}">
@@ -43,9 +42,10 @@
                 </a>
                 </div>
               </div>
+
             </div>
           </div>
-       	</div>
+    {% endfor %}
 </div>
 <br />
 <hr />

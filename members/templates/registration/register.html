@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %} <br /><br />
+<div class="container">
+    {% if user.is_authenticated %}
+    <h3>You have allready registered..!!</h3>
+
+    {% else %}
+    <h3>New Member? Register with us</h3>
+    <hr>
+            <form method="POST">
+      {% csrf_token %}
+        {{form.as_p}}
+        <button class="btn btn-info">Register</button>
+            <br><br><br><hr>
+    {% endif %}
+
+</div>
+{% endblock %}

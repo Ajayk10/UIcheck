@@ -5,6 +5,9 @@
     .table{
     text-align: center;
 }
+.inside{
+color:#463ead;
+}
 </style>
 
 <div class="container">
@@ -12,16 +15,18 @@
         <div class="card mb-3" style="max-width: 540px;">
             <div class="row no-gutters">
               <div class="col-md-4">
-                <img style="border-radius: 100%;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Dwayne_Johnson_at_the_2009_Tribeca_Film_Festival.jpg/220px-Dwayne_Johnson_at_the_2009_Tribeca_Film_Festival.jpg" class="card-img" alt="...">
+                <img style="border-radius: 100%;" src="https://media.tenor.com/images/d6fa8e3fe72475754a1e7b21dd35172c/tenor.gif" class="card-img" alt="...">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title" style="font-family:cursive;">Mohanlal Dileep</h5>
-                  <h6 class="card-title"><i class="fas fa-at" style="padding-right: 10px;"></i>Username</h6>
-                  <h6 class="card-title"><i class="far fa-envelope" style="padding-right: 10px;"></i>user@gmail</h6>
-                  <h6 class="card-title"><i class="fas fa-phone-alt" style="padding-right: 10px;"></i>9003177146</h6>
-                  <p class="card-text"><i class="far fa-calendar-plus" style="padding-right: 10px;"></i>Joined on:</p>
-                  <p class="card-text"><i class="fas fa-info" style="padding-right: 10px;"></i>Bio</p>
+                  <h4 class="card-title" style="background:; color:white;text-shadow: 2px 2px 4px #000000;">{{user_details.firstname}} {{user_details.lastname}}</h4>
+                  <h6 class="card-title"><i class="fas fa-at" style="padding-right: 10px;color:#4abdff;"></i>{{user_details.firstname}}</h6>
+                  <h6 class="card-title"><i class="far fa-envelope" style="padding-right: 10px;color:#4abdff;"></i>{{user_details.email}}</h6>
+                  <h6 class="card-title"><i class="fas fa-globe-asia" style="padding-right: 10px;color:#4abdff;"></i>{{user_details.location}}</h6>
+                  <h6 class="card-text"><i class="far fa-calendar-plus" style="padding-right: 10px;color:#4abdff;"></i>Joined on:
+                      {{user_details.joined}}</h6>
+                  <h6 class="card-text"><i class="fas fa-info" style="padding-right: 10px;color:#4abdff;"></i>Bio: {{user_details.bio}}</h6>
+                    <a href="{% url 'logout' %}" style="text-decoration:none;"><i class="fas fa-power-off"></i> Log Out</a>
                 </div>
               </div>
             </div>

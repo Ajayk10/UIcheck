@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %} <br /><br />
+{% if user.is_authenticated %}
+    <div class="container">
+            <form method="POST">
+          {% csrf_token %}
+            {{form.as_p}}
+            <button class="btn btn-info">Post</button>
+                <br><br><br><hr>
+
+
+    </div>
+{% else %}
+    <h2>Login First</h2>
+{% endif %}
+{% endblock %}

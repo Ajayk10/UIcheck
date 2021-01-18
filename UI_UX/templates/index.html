@@ -1,53 +1,56 @@
-{% extends 'base.html' %} {% load static %} 
-
-{% block content %} <br /><br />
-
-
-<script type="text/javascript">
-    function react()
-{
-
-    value = document.getElementById("like").className;
-	if (value === "fas fa-heart fa-2x") {
-        document.getElementById("count").innerHTML = '9'
-		document.getElementById("like").className = "far fa-heart fa-2x";
-		document.getElementById("like").style.color = "black";
-		
-	} else {
-        document.getElementById("count").innerHTML = '10'
-		document.getElementById("like").className = "fas fa-heart fa-2x";
-		document.getElementById("like").style.color = 'crimson'
-		
-	}
-}
-
-
-</script>
+{% extends 'base.html' %}
+{% block content %}
+<br><br /><br /><br /><br />
 <div class="container">
-    {% for feeds in feeds %}
-        <div class="card mb-3">
-            <div class="row no-gutters">
-              <div class="col-md-4">
-                <img src="{{feeds.link}}" id="imgContent" class="card-img" alt="..."/>
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">{{feeds.title}}</h5>
-                  <p class="card-text">{{feeds.desc}}.</p>
-                  <button class="like" >
-                    <i class="far fa-heart fa-2x" id="like"></i> <p id='count'></p>
-                </button>
-                <a style="float: right;" class="comment" href="{% url 'content' %}">
-                    <i class="far fa-comment-alt fa-2x"></i>
-                </a>
-                </div>
-              </div>
+        {% if user.is_authenticated %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>Hi , {{user.username}}</strong> Welcome!.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+        </div>
 
-            </div>
-          </div>
-    {% endfor %}
+<!--            {% if user.username == 'ajay10' or user.username == 'awake' %}-->
+<!--                <a href="{% url 'addfeed' %}">-->
+<!--                    <i class="fas fa-plus-circle fa-2x"></i>-->
+<!--                </a> ||-->
+<!--                <a href="{% url 'logout' %}">Logout</a>-->
+<!--            {% else %}-->
+<!--                <a href="{% url 'logout' %}">Logout</a>-->
+<!--            {% endif %}-->
+
+<!--        {% endif %}-->
+
+    {% for post in object_list %}
+    <div class="card mb-3" style="max-width:auto;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://picsum.photos/300/200" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><a href="{% url 'article' post.pk %}">{{post.title}}</a></h5>
+        <p class="card-text">{{post.body | slice:":60"}} ...</p>
+          {% if user.username == post.author.username %}
+            <p class="card-text">
+                <small class="text-muted">{{post.author}} - {{post.post_date}} <i class="fas fa-crown"></i>
+                </small>
+            </p>
+          {% else %}
+          <p class="card-text">
+                <small class="text-muted">{{post.author}} - {{post.post_date}}
+                </small>
+            </p>
+          {% endif %}
+      </div>
+    </div>
+  </div>
 </div>
-<br />
-<hr />
+    {% endfor %}
 
+
+</div>
+<br>
+<hr>
+<br>
 {% endblock %}

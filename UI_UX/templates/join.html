@@ -1,0 +1,62 @@
+{% extends 'base.html' %} {% load static %}
+
+{% block content %} <br /><br />
+
+<script>
+var request = new XMLHttpRequest();
+
+request.open('GET', 'https://api.ipdata.co/?api-key=test');
+
+request.setRequestHeader('Accept', 'application/json');
+
+request.onreadystatechange = function () {
+  if (this.readyState === 4) {
+    var data = this.responseText
+    var jsonResponse = JSON.parse(data);
+    console.log(jsonResponse["city"],jsonResponse["region"],jsonResponse["country_name"]);
+    var location_details = jsonResponse["city"] + " , " +jsonResponse["region"] + " , " +jsonResponse["country_name"]
+    document.getElementById("location").value = location_details
+
+    var currentdate = new Date();
+    var months = ["January","February","March","April","May",
+             "June","July","August","September","October",
+             "November","December"];
+    var datetime =months[(currentdate.getMonth())]  + " - " + currentdate.getFullYear()
+    document.getElementById("joined").value = datetime
+    console.log(document.getElementById("join").value)
+  }
+};
+request.send();
+
+</script>
+
+
+<div class="container" style="font-family: 'Roboto', sans-serif;">
+        <div class="card mb-3">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="https://media.tenor.com/images/d6fa8e3fe72475754a1e7b21dd35172c/tenor.gif" id="imgContent" class="card-img" alt="..."/>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h4 class="card-title" style="font-family: 'Roboto', sans-serif;">Join Us</h4>
+                  <form method="POST">
+                      {% csrf_token %}
+                      <br><input type="text" name="firstname" class="form-control" placeholder="Firstname">
+                      <br><input type="text" name="lastname" class="form-control" placeholder="Lastname">
+                      <br><input type="email" name="email" class="form-control" placeholder="Email">
+                      <br><input type="password" name="password" class="form-control" placeholder="Password">
+                      <br><input readonly type="text" name="location" id="location" class="form-control" placeholder="City">
+                      <br><input readonly type="text" name="joined" id="joined" class="form-control" placeholder="City">
+                      <br><textarea name="bio" placeholder="Describe yourself" class="form-control"></textarea>
+                      <br><input type="submit" class="btn btn-dark  btn-lg btn-block"  name="join" value="Join">
+                  </form>
+                    <br><br>
+                </div>
+              </div>
+
+            </div>
+          </div>
+</div>
+
+{% endblock %}

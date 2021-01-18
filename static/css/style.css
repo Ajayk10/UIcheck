@@ -1,7 +1,7 @@
 .like,
 .like:focus {
-    border-color: transparent;
-    background-color:transparent;
+    border-color: black;
+    background-color:black;
     text-decoration: none;
     outline: none;
     border: none;
@@ -19,7 +19,7 @@
 
 
 .fa-comment-alt{
-    color: black;
+    color: #ff4800;;
     text-decoration: none;
     outline: none;
 }

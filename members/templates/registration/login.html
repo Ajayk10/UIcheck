@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %} <br /><br />
+<div class="container">
+    <br /><br /><br /><br /><br /><br /><br /><br />
+     {% if user.is_authenticated %}
+        <h3>You have allready Logged in..!!</h3>
+     {% else %}
+        <h3>Login to Begin the Spiritual Journey</h3>
+        <hr>
+            <form method="POST">
+          {% csrf_token %}
+            {{form.as_p}}
+            <button class="btn btn-info">Login</button>
+                <br><br><br><hr>
+
+            </form>
+        {% endif %}
+    </div>
+{% endblock %}
